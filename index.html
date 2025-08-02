@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Croix Circuits | Electronics Repair, Design & Installation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Hero fade-in animation */
+        .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1.2s ease-out forwards; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        /* Button hover scale animation */
+        .animated-button { transition: transform 0.3s ease, background-color 0.3s ease; }
+        .animated-button:hover { transform: scale(1.05); }
+        /* Service card hover animation */
+        .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); }
+        /* Scroll fade-in animation */
+        .scroll-fade { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .scroll-fade.visible { opacity: 1; transform: translateY(0); }
+        /* Dropdown */
+        .dropdown-menu { display: none; }
+        .dropdown.open .dropdown-menu { display: block; }
+        /* Mobile nav */
+        .mobile-menu { display: none; }
+        @media (max-width: 768px) {
+            nav ul { flex-direction: column; display: none; background: #1e3a8a; position: absolute; top: 100%; left: 0; width: 100%; }
+            nav ul.show { display: flex; }
+            .mobile-menu { display: block; cursor: pointer; }
+            /* Mobile font adjustments */
+            h1 { font-size: 1.75rem; }
+            h2 { font-size: 1.75rem; }
+            h3 { font-size: 1.5rem; }
+            p, a, li { font-size: 1rem; }
+            section { padding: 2rem 1rem; }
+            .animated-button { padding: 0.5rem 1.25rem; font-size: 1rem; }
+            /* Service cards on mobile */
+            .service-card { padding: 1.5rem; }
+            #services .grid { gap: 1.5rem; }
+            /* Service card images smaller on mobile */
+            .service-card img { max-width: 80%; margin: 0 auto 1rem auto; display: block; }
+            /* Hero section text smaller on mobile */
+            .hero-text h2 { font-size: 2rem; }
+            .hero-text p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-6 shadow-md relative">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-3xl font-bold">St. Croix Circuits</h1>
+            <div class="mobile-menu text-2xl">☰</div>
+            <nav>
+                <ul class="flex space-x-6 text-lg">
+                    <li class="relative dropdown">
+                        <a href="#services" class="hover:underline dropdown-toggle">Services</a>
+                        <ul class="absolute left-0 mt-2 bg-white text-gray-900 rounded shadow-lg dropdown-menu">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Service 1</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Service 2</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Service 3</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Service 4</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Service 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about" class="hover:underline">About</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gray-800 text-white py-20">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1579803081355-0a6da0619a32?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Electronics Workbench" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+        <div class="container mx-auto text-center px-6 relative z-10 hero-text fade-in">
+            <h2 class="text-5xl font-bold mb-4">Electronics Repair, Design & Installation</h2>
+            <p class="text-xl mb-8">Reliable solutions for your home, business, and custom projects.</p>
+            <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-xl font-semibold animated-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white scroll-fade">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-12">Our Services</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg service-card">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Electronics Repair" class="mb-6 rounded">
+                    <h4 class="text-2xl font-semibold mb-4">Electronics Repair</h4>
+                    <p>We troubleshoot and repair a wide range of devices, from consumer electronics to specialized equipment.</p>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg service-card">
+                    <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=600&q=80" alt="Circuit Design" class="mb-6 rounded">
+                    <h4 class="text-2xl font-semibold mb-4">Custom Design</h4>
+                    <p>Our team creates tailored electronics solutions for your unique needs, from concept to finished product.</p>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg service-card">
+                    <img src="https://images.unsplash.com/photo-1581090700227-4c4a1e4a55b3?auto=format&fit=crop&w=600&q=80" alt="Installation" class="mb-6 rounded">
+                    <h4 class="text-2xl font-semibold mb-4">Installation</h4>
+                    <p>We provide professional installation services for electronics systems, ensuring safety and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 scroll-fade">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-6">About St. Croix Circuits</h3>
+            <p class="text-lg max-w-3xl mx-auto">St. Croix Circuits is committed to providing top-quality electronics repair, design, and installation services. Our experienced team combines technical expertise with a passion for innovation to deliver reliable, efficient, and cost-effective solutions for individuals and businesses alike.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white scroll-fade">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-6">Get in Touch</h3>
+            <p class="mb-8 text-lg">Have a project in mind? Need a repair? Contact us today!</p>
+            <form class="max-w-xl mx-auto">
+                <input type="text" placeholder="Your Name" class="w-full mb-4 p-3 border rounded">
+                <input type="email" placeholder="Your Email" class="w-full mb-4 p-3 border rounded">
+                <textarea placeholder="Your Message" class="w-full mb-4 p-3 border rounded"></textarea>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg animated-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-6 mt-10">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 St. Croix Circuits. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll fade-in functionality
+        const faders = document.querySelectorAll('.scroll-fade');
+        const appearOptions = { threshold: 0.1 };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+        faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+        // Dropdown click toggle for mobile
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', e => {
+                e.preventDefault();
+                const parent = toggle.parentElement;
+                parent.classList.toggle('open');
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
